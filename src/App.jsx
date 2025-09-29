@@ -1,17 +1,11 @@
-
-
+import React from "react";
+import Navbar from "./Navbar";
 
 function App() {
- 
-
   return (
-    <>
-      <div>
-        <h1>hello worlds</h1>
-      </div>
-        
-    </>
-  )
+    <Navbar/>
+  );
 }
 
-export default App
+export default App;
+
