@@ -8,7 +8,6 @@ const NavBar = () => {
   const navigate = useNavigate()
   const user = useSelector((store) => store.user);
   
-  console.log(user);
   const handlelogout = async()=>{
     axios.post("http://localhost:7777/logout",{},{withCredentials : true})
       dispatch(removeUser(user))
@@ -43,9 +42,13 @@ const NavBar = () => {
                   <span className="badge">New</span>
                 </Link>
               </li>
-              <li>
-                <a>Settings</a>
+               <li>
+                <Link to="/connections" className="justify-between">
+                  Connections
+                  <span className="badge">New</span>
+                </Link>
               </li>
+             
               <li>
                 <a onClick={handlelogout}>Logout</a>
               </li>
