@@ -32,7 +32,16 @@ const Feed = () => {
       {feedData.length > 0 ? (
         <UserCard user={feedData[0]} />
       ) : (
-        <p>Loading...</p>
+        <div className="flex items-center justify-center mt-16">
+  <div className="bg-gray-800 text-gray-300 px-8 py-6 rounded-2xl shadow-lg border border-gray-700 text-center">
+    <p className="text-xl font-semibold tracking-wide">
+      🚀 No more users to show
+    </p>
+    <p className="text-sm text-gray-400 mt-2">
+      Please check back later for new connections.
+    </p>
+  </div>
+</div>
       )}
     </div>
   )
