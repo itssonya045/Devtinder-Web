@@ -30,7 +30,7 @@ const Auth = () => {
       });
 
       dispatch(addUser(res.data));
-      navigate("/profile");
+      navigate("/");
     } catch (error) {
       setError(error?.response?.data);
     }

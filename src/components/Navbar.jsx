@@ -14,55 +14,89 @@ const NavBar = () => {
       return navigate("/login")
   }
 
-  return (
-    <div className="navbar bg-base-300">
-      <div className="flex-1">
-        <Link to="/" className="btn btn-ghost text-xl">👩‍💻 DevTinder</Link>
-      </div>
-      {user && (
-        <div className="flex-none gap-2">
-          <div className="form-control">Welcome, {user.firstName}</div>
-          <div className="dropdown dropdown-end mx-5 flex">
-            <div
-              tabIndex={0}
-              role="button"
-              className="btn btn-ghost btn-circle avatar"
-            >
-              <div className="w-10 rounded-full">
-                <img alt="user photo" src={user.photoUrl} />
-              </div>
-            </div>
-            <ul
-              tabIndex={0}
-              className="menu menu-sm dropdown-content bg-base-100 rounded-box z-[1] mt-3 w-52 p-2 shadow"
-            >
-              <li>
-                <Link to="/profile" className="justify-between">
-                  Profile
-                  <span className="badge">New</span>
-                </Link>
-              </li>
-               <li>
-                <Link to="/connections" className="justify-between">
-                  Connections
-                  <span className="badge">New</span>
-                </Link>
-              </li>
-                <li>
-                <Link to="/requests" className="justify-between">
-                  Requests
-                  <span className="badge">New</span>
-                </Link>
-              </li>
-             
-              <li>
-                <a onClick={handlelogout}>Logout</a>
-              </li>
-            </ul>
-          </div>
-        </div>
-      )}
+return (
+  <div className="navbar bg-base-300 border-b border-base-100/40 px-6">
+    
+    {/* Left Section */}
+    <div className="flex-1">
+      <Link
+        to="/"
+        className="text-xl font-semibold tracking-tight hover:text-primary transition"
+      >
+        👩‍💻 DevTinder
+      </Link>
     </div>
-  );
+
+    {user && (
+      <div className="flex-none flex items-center gap-6">
+
+        {/* Welcome Text */}
+        <div className="text-sm opacity-70">
+          Welcome, <span className="font-medium">{user.firstName}</span>
+        </div>
+
+        {/* Avatar Dropdown */}
+        <div className="dropdown dropdown-end">
+          <div
+            tabIndex={0}
+            role="button"
+            className="w-10 h-10 rounded-full overflow-hidden
+            border border-base-100/40
+            hover:border-primary
+            transition cursor-pointer"
+          >
+            <img
+              alt="user"
+              src={user.photoUrl}
+              className="w-full h-full object-cover"
+            />
+          </div>
+
+          <ul
+            tabIndex={0}
+            className="menu menu-sm dropdown-content
+            bg-base-200
+            rounded-xl
+            z-[1] mt-3 w-52 p-2
+            shadow-lg border border-base-100/40"
+          >
+            <li>
+              <Link to="/profile" className="hover:bg-base-300 rounded-lg">
+                Profile
+              </Link>
+            </li>
+
+             <li>
+              <Link to="/" className="hover:bg-base-300 rounded-lg">
+                Discover
+              </Link>
+            </li>
+
+            <li>
+              <Link to="/connections" className="hover:bg-base-300 rounded-lg">
+                Connections
+              </Link>
+            </li>
+
+            <li>
+              <Link to="/requests" className="hover:bg-base-300 rounded-lg">
+                Requests
+              </Link>
+            </li>
+
+            <li>
+              <button
+                onClick={handlelogout}
+                className="hover:bg-red-500 hover:text-white rounded-lg"
+              >
+                Logout
+              </button>
+            </li>
+          </ul>
+        </div>
+      </div>
+    )}
+  </div>
+);
 };
 export default NavBar;

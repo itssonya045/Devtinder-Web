@@ -7,6 +7,7 @@ import appStore from "./utils/appStore"
 import Feed from "./components/feed"
 import { Connection } from "./components/Connection"
 import Request from "./components/Request"
+import Chat from "./components/Chat"
 function App() {
   
 
@@ -20,6 +21,7 @@ function App() {
          <Route path="/profile" element={<Profile/>}></Route>
          <Route path="/connections" element={<Connection/>}></Route>
          <Route path="/requests" element={<Request/>}></Route>
+         <Route path="/chat/:targetUserId" element={<Chat/>}></Route>
       </Route>
     </Routes>
    </BrowserRouter>

@@ -19,7 +19,7 @@ const Request = () => {
       console.error("Error fetching requests:", err);
     }
   };
-t
+
   const reviewRequest = async (status, requestId) => {
     try {
       await axios.post(
@@ -45,7 +45,7 @@ t
       <div className="min-h-screen bg-base-200 flex items-center justify-center px-4">
         <div className="bg-base-300/80 backdrop-blur-md
           border border-base-100/40
-          rounded-xl px-8 py-10
+          rounded-xl px-2 py-5
           text-center max-w-md w-full">
 
           <div className="text-4xl mb-4 opacity-70">📭</div>
